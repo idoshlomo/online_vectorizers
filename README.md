@@ -17,6 +17,8 @@ This repo contains an extension of these two classes which supports partial fitt
 
 * If your pipeline specifically doesn't care about the vector dimension (e.g. if you immediately apply a transformation like cosine similarity) than you shouldn't care about this.
 
+* I tried to use core code from Scikit-Learn itself wherever possible (hence the lengthy docstrings and the \_count\_analyzed\_vocab method)
+
 ### In this repo
 
 * Core code in online_vectorizers.py
