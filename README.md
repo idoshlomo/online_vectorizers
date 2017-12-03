@@ -1,7 +1,7 @@
 # Online Vectorizers
 Extension of scikit-learn TfidfVectorizer and CountVectorizer that allows for online learning / partial fit.
 
-### The proglem
+### The problem
 A big challenges in using TF-IDF vector representations in production environment is how to deal with out of core textual data. What usually happens is that the existing vectorization will ignore all OOV (out of vocabulary) tokens. This then causes inaccurate decision making later on in the pipelines. This is a real problem when the process is sensitive to unique tokens (e.g. cosine string similarity on short strings).
 
 
@@ -16,3 +16,11 @@ This repo contains an extension of these two classes which supports partial fitt
 * This implementation definitely **does** change the dimension, since the whole point is to support new tokens. This is why I called these methods "partial **refit**" as opposed to "partial **fit**" to make clear this distinction.
 
 * If your pipeline specifically doesn't care about the vector dimension (e.g. if you immediately apply a transformation like cosine similarity) than you shouldn't care about this.
+
+### In this repo
+
+* Core code in online_vectorizers.py
+
+* Example usage and script validation equivalency of online to "regular" methods in the examples directory
+
+* Examples use a bit of sample data taken from Hansards "Parliament of Canada" dataset ([here](https://www.isi.edu/natural-language/download/hansard/)).
